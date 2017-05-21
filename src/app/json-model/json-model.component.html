@@ -1,0 +1,15 @@
+<div>Read Json model</div>
+
+<div>{{templeList.id}}</div>
+<div>{{templeList.name}}</div>
+
+
+<ul *ngFor="let data of json1.payload.data">
+  <li>{{data.id}}</li>
+  <li>{{data.name}}</li>
+  <li>{{data.startDate}}</li>
+  <li>{{data.endDate}}</li>
+  <li *ngFor="let event of data.event_room_type_rate">
+    <div>{{event.rate}}</div>
+  </li>
+</ul>
