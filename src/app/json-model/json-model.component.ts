@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Temple} from './temple.model';
+import {Data} from "./data.mode";
 
 @Component({
   selector: 'app-json-model',
@@ -8,6 +9,7 @@ import {Temple} from './temple.model';
 })
 export class JsonModelComponent implements OnInit {
   templeList: Temple;
+  dataList: Data[];
   json1: any = '';
 
   constructor(){}
@@ -19,7 +21,9 @@ export class JsonModelComponent implements OnInit {
 
   assignModel(){
      this.templeList = this.json1;
+     this.dataList = this.json1.payload.data;
      console.log('Temple List', this.templeList);
+     console.log('Dara List', this.dataList);
   }
 
   assignJson() {

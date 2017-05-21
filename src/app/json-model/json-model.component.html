@@ -3,13 +3,14 @@
 <div>{{templeList.id}}</div>
 <div>{{templeList.name}}</div>
 
-
-<ul *ngFor="let data of json1.payload.data">
+<ul *ngFor="let data of dataList">
   <li>{{data.id}}</li>
   <li>{{data.name}}</li>
   <li>{{data.startDate}}</li>
   <li>{{data.endDate}}</li>
   <li *ngFor="let event of data.event_room_type_rate">
-    <div>{{event.rate}}</div>
+    <div><span>Rate: </span>{{event.rate}}</div>
   </li>
+  <li><span>Temple Name: </span>{{data.temple.name}}</li>
+  <li><span>Alias Name: </span>{{data.temple.aliasName}}</li>
 </ul>
